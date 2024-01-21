@@ -1,0 +1,21 @@
+*어떤수 N이 1이 될때까지 다음 조건을 반복할 수 있다. 1 N에서 1을 뺸다 2. N을 K로 나눈다
+최소횟수도 1을 만드는 횟수를 구하는 코드
+
+n, k = map(int, input(),split())
+result = 0
+
+# N이 K이상이라면 K로 계속 나누기
+while n >= k:
+   while n%k != 0:
+       n -= 1
+      result += 1
+   #k로 나누기
+   n//=k
+   result += 1
+
+#마지막으로 남은수 1씩 빼기
+while n>1:
+   n-= 1
+   result +=1
+
+print(result)
